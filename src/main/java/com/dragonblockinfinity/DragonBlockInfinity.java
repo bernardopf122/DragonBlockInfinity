@@ -1,9 +1,8 @@
 package com.dragonblockinfinity;
 
-import com.dragonblockinfinity.common.ki.KiCapability;
-import com.dragonblockinfinity.common.command.SpawnDinossauroCommand;
-import com.dragonblockinfinity.registry.ModRegistry;
-import com.dragonblockinfinity.registry.ModEntities;
+import com.dragonblockinfinity.common.init.ModBlocks;
+import com.dragonblockinfinity.common.init.ModItems;
+import com.dragonblockinfinity.common.init.ModCreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -24,16 +23,11 @@ public class DragonBlockInfinity {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
 
-        ModRegistry.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModItems.register(modEventBus);
+        ModCreativeTabs.register(modEventBus);
 
-        // Registrar listener de atributos de entidade
-        modEventBus.addListener((EntityAttributeCreationEvent e) -> ModEntities.registerAttributes(e));
-
-        // Registrar comando de spawn (evento Forge)
-        MinecraftForge.EVENT_BUS.addListener((RegisterCommandsEvent e) -> SpawnDinossauroCommand.register(e.getDispatcher()));
-
-        // Eventos Forge (attach capability + tick regen + sync)
-        MinecraftForge.EVENT_BUS.register(new KiCapability.Events());
+    
 
         System.out.println("=== DRAGON BLOCK INFINITY CARREGADO ===");
     }

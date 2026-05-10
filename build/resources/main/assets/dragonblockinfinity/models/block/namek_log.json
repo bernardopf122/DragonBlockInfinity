@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "dragonblockinfinity:block/namek_log_side",
+    "down": "dragonblockinfinity:block/namek_log_top",
+    "up": "dragonblockinfinity:block/namek_log_top",
+    "north": "dragonblockinfinity:block/namek_log_side",
+    "south": "dragonblockinfinity:block/namek_log_side",
+    "west": "dragonblockinfinity:block/namek_log_side",
+    "east": "dragonblockinfinity:block/namek_log_side"
+  }
+}
