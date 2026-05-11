@@ -1,6 +1,14 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "dragonblockinfinity:item/comida/senzu"
-  }
+    "layer0": "dragonblockinfinity:item/comida/senzu1"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:use_duration": 0.0
+      },
+      "model": "dragonblockinfinity:item/senzu_using"
+    }
+  ]
 }
