@@ -1,14 +1,14 @@
 package com.dbi.client;
 
 import com.dbi.entity.Dino1Entity;
-import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.util.Identifier;
-import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
+import software.bernie.geckolib3.renderer.geo.GeoEntityRenderer;
 
 public class Dino1Renderer extends GeoEntityRenderer<Dino1Entity> {
 
-    public Dino1Renderer(EntityRendererFactory.Context ctx) {
-        super(ctx, new Dino1Model());
+    public Dino1Renderer(EntityRenderDispatcher dispatcher) {
+        super(dispatcher, new Dino1Model());
     }
 
     @Override

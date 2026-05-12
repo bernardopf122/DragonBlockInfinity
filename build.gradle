@@ -1,61 +1,45 @@
 plugins {
-    id 'fabric-loom' version "${loom_version}"
+    id 'fabric-loom' version '0.12-SNAPSHOT'
     id 'maven-publish'
 }
 
-version = project.mod_version
-group = project.maven_group
-archivesBaseName = project.mod_id
+version = '1.0.0'
+group = 'com.bernardo.dbi'
+archivesBaseName = 'dragonblockinfinity'
 
 repositories {
-    maven { url "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
-	maven { url "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
-	
+    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+    mavenCentral()
 }
 
 dependencies {
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-    modImplementation "software.bernie.geckolib:geckolib-fabric-1.16.5:3.0.57"
-    modImplementation "software.bernie.geckolib:geckolib-fabric-1.16.5:3.0.57"
+    minecraft "com.mojang:minecraft:1.16.5"
+    mappings "net.fabricmc:yarn:1.16.5+build.10:v2"
+    modImplementation "net.fabricmc:fabric-loader:0.14.22"
+    
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.42.0+1.16"
+    
+    modImplementation 'software.bernie.geckolib:geckolib-fabric-1.16.5:3.0.107'
 }
 
 processResources {
-    def version = project.version
-    inputs.property "version", version
+    inputs.property "version", project.version
     filesMatching("fabric.mod.json") {
-        expand "version": version
+        expand "version": project.version
     }
 }
 
 tasks.withType(JavaCompile).configureEach {
-    it.options.release = 8
+    it.options.release = 17
 }
 
 java {
-    withSourcesJar()
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 jar {
-    def projectName = project.name
-    archiveBaseName = project.mod_id
-    inputs.property "projectName", projectName
     from("LICENSE") {
-        rename { "${it}_$projectName" }
-    }
-}
-
-publishing {
-    publications {
-        create("mavenJava", MavenPublication) {
-            from components.java
-        }
-    }
-    repositories {
-    maven { url "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
+        rename { "${it}_${project.archivesBaseName}"}
     }
 }

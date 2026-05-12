@@ -1,31 +1,22 @@
 {
-	"schemaVersion": 1,
-	"id": "dbi",
-	"version": "${version}",
-	"name": "Example Mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/dbi/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.dbi.DBI"
-		]
-	},
-	"mixins": [
-		"dbi.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.19.2",
-		"minecraft": "~1.16.5",
-		"java": ">=8",
-		"fabric": "*"
-	}
+  "schemaVersion": 1,
+  "id": "dbi",
+  "version": "${version}",
+  "name": "Dragon Block Infinity",
+  "description": "Mod de Dragon Block para Fabric",
+  "authors": ["SeuNome"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/dbi/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.dbi.Dbi"]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.19.2",
+    "fabric": "*",
+    "geckolib3": ">=3.0.107",
+    "minecraft": "1.16.5"
+  }
 }
