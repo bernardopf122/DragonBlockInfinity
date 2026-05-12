@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dbi:item/comida/senzu1"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:use_duration": 0.0
+      },
+      "model": "dbi:item/senzu_using"
+    }
+  ]
+}

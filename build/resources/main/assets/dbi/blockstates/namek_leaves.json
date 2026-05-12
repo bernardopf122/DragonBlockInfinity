@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "dbi:block/namek_leaves"
+    }
+  }
+}

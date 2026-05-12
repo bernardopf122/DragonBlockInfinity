@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "dbi:block/namek_log_side",
+    "down": "dbi:block/namek_log_top",
+    "up": "dbi:block/namek_log_top",
+    "north": "dbi:block/namek_log_side",
+    "south": "dbi:block/namek_log_side",
+    "west": "dbi:block/namek_log_side",
+    "east": "dbi:block/namek_log_side"
+  }
+}
